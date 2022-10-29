@@ -17,6 +17,7 @@ namespace TestNinjectBindings
 
         public IKernel Compose()
         {
+            kernel.Bind<IWeapon>().To<Dagger>();
             return kernel;            
         }
     }

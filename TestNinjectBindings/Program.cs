@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Ninject;
+using System.Diagnostics;
 
 namespace TestNinjectBindings
 {
@@ -6,7 +7,11 @@ namespace TestNinjectBindings
     {
         static void Main(string[] args)
         {
-            Debug.WriteLine("Hello, World!");
+            var kernel = new CompositionRoot().Compose();
+
+            var weapon = kernel.Get<IWeapon>();
+
+            Debug.WriteLine($"Weapon attack: {weapon.Attack()}");
         }
     }
 }
