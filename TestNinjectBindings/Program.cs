@@ -1,15 +1,12 @@
-﻿namespace TestNinjectBindings
+﻿using System.Diagnostics;
+
+namespace TestNinjectBindings
 {
-    public class Program
+    internal class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var kernel = new CompositionRoot().Compose();
-
-            Console.WriteLine("Hello, World!");
+            Debug.WriteLine("Hello, World!");
         }
-    }    
+    }
 }
-
-
-
