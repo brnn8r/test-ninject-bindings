@@ -1,5 +1,7 @@
 ﻿using Ninject;
 using System.Diagnostics;
+using TestNinjectBindings.Actors;
+using TestNinjectBindings.Weapons;
 
 namespace TestNinjectBindings
 {
@@ -9,9 +11,12 @@ namespace TestNinjectBindings
         {
             var kernel = new CompositionRoot().Compose();
 
-            var weapon = kernel.Get<IWeapon>();
+            var actors = kernel.GetAll<IActor>();
 
-            Debug.WriteLine($"Weapon attack: {weapon.Attack()}");
+            foreach(var actor in actors)
+            {
+                Debug.WriteLine(actor.Attack());
+            }
         }
     }
 }

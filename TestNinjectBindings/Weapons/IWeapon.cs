@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestNinjectBindings
+namespace TestNinjectBindings.Weapons
 {
     public interface IWeapon
     {
-        string Attack();
+        int Damage { get; }
+
+        string Type { get; }
     }
 }
